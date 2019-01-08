@@ -46,4 +46,13 @@ const getBookQuery = gql`
     }
 `
 
+const getCompaniesQuery = gql`
+    {
+        companies{
+            name
+            id
+        }
+    }
+`
+
 export {getAuthorsQuery, getBooksQuery, addBookMutation, getBookQuery};
