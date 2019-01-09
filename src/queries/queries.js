@@ -51,6 +51,23 @@ const getCompaniesQuery = gql`
         companies{
             name
             id
+        income{
+            id
+            incomeType
+        }
+        }
+    }
+`
+
+const getCompanyQuery = gql`
+    query($id: ID){
+        company(id:$id){
+            id
+            name
+            income{
+                id
+                incomeType
+            }
         }
     }
 `
@@ -63,5 +80,5 @@ const addCompanyMutation = gql`
         }
     }
 `
-export {getAuthorsQuery, getBooksQuery, addBookMutation, getBookQuery, getCompaniesQuery, 
+export {getAuthorsQuery, getCompanyQuery, getBooksQuery, addBookMutation, getBookQuery, getCompaniesQuery, 
     addCompanyMutation};
